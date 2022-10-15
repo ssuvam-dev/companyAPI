@@ -38,11 +38,11 @@ class CompanyController extends Controller
         }
         // registering the company
         else{
-        $company = new companyModel();
-        $company->name = $request->name;
-        $company->siren = $request->siren;
-        $company->siret = $request->siret; 
-        $res  = $company->save();
+            $company = new companyModel();
+            $company->name = $request->name;
+            $company->siren = $request->siren;
+            $company->siret = $request->siret; 
+            $res  = $company->save();
         //returnig the message
         if($res){
             return ['result'=>'Data has been saved successfully.'];
