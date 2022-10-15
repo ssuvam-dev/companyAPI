@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +19,12 @@ Route::get('/', function () {
 })->name('home');
 
 
+
+Auth::routes();
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return view('index');
+})->name('logoutuser');
+
+Route::get('/company/register',[CompanyController::class,'showregisterCompany'])->name('showregisterCompany');

@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/companies',[CompanyController::class,'getCompanyList']);
 
 //  api route to register the company list...
-Route::post('/company/register',[CompanyController::class,'registerCompany']);
+Route::post('/company/register',[CompanyController::class,'registerCompany'])->name('registerCompany');
 
 //search for the company
 Route::get('/company_search/',[CompanyController::class,'searchCompany'])->name('search');

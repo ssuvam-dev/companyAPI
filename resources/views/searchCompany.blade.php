@@ -7,8 +7,6 @@
                 <div class="card-header">{{ __('Identify Your Company') }}</div>
                 <div class="card-body">
                     <form method="GET" action="{{route('search')}}">
-                        
-
                         <div class="flex justify-center">
   <div class="mb-3 xl:w-96">
     <div class="input-group relative flex flex-wrap items-stretch w-full mb-4">
@@ -17,10 +15,30 @@
     </div>
   </div>
 </div>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
+<div>
+@foreach($collection as $data)
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex justify-content-between  bg-{{($data['inDB'] == true)?'primary text-white':''}}">
+    <h5 class="card-title">{{$data['company_name']}}</h5> 
+     <h5>Siret: {{$data['siret']}}</h5>
+    </div>
+    <p class="card-text">{{$data['naf']}}</p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+@endforeach
 </div>
 @endsection
